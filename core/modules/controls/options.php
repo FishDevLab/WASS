@@ -74,7 +74,7 @@ class Options
 
     private function set_mode($in){
         switch(true){
-            case($in == "S"): //Scanner->Finder->Crawler
+            case($in == "S"): 
                 if(isset(self::$return_options["set-engine"]) && isset(self::$return_options["set-search"])){
                     Options::mode_s();
                 }else{
@@ -90,9 +90,6 @@ class Options
                     exit(0);
                 }
                 break;
-            case($in == "SFC"): //Scanner->Finder->Crawler
-                Options::mode_sfc();
-                break;
             case ($in == "FC"): // Finder->Crawler
                 if(isset(self::$return_options["set-finder"]) && isset(self::$return_options["set-search"])){
                     Options::mode_fc();
@@ -101,7 +98,7 @@ class Options
                     exit(0);
                 }
                 break;
-            default: // case SFC ALL
+            default:
                 print("\n[-] OPTION CONTENT NOT VALID: S/SF/SFC/FC/C [-]").exit(0);
                 
                 break;
@@ -120,16 +117,6 @@ class Options
         sleep(0.1);
         $find = new Modules\Finder(Modules\Scanner::$scan_result);
         $find -> find();
-        exit(0);
-    }
-    public static function mode_sfc()
-    {
-        $scan = new Modules\Scanner(self::$dork,self::$engine);
-        $scan -> scan();
-        sleep(0.1);
-        $find = new Modules\Finder(Modules\Scanner::$scan_result);
-        $find -> find();
-        sleep(0.1);
         exit(0);
     }
     public static function mode_fc()
