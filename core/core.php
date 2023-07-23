@@ -26,7 +26,6 @@ class Core
                                     'Request' => '/modules/request.php',
                                     'Finder' => '/modules/finder.php',
                                     'Scanner' => '/modules/scanner.php',
-                                    'Crawler' => '/modules/crawler.php',
                                     'Bypasser' => '/modules/bypasser.php');
     private function loader(){
         sleep(1);
