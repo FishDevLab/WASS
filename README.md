@@ -20,7 +20,8 @@ Future Engines: ASK, YAHOO, DUCKDUCKGO, QWANT, ECOSIA, OSCOBO, BAIDU,YANDEX<br>
 ../WASS/]$ php wass.php --help
 
 # BYPASSER
-GoogleAttemptBypasser-0.0.8 check if googel response block you and regenerate the request with differen digital identity information (headers,ua,location)<br>
+Bypasser is only available for Google Search Engine
+GoogleAttemptBypasser-0.0.8 check if google response block you and regenerate the request with different digital identity information (headers,ua,location)<br>
 and redirect to a random google domain site.<br>
 Available: Google Unusual Traffic Bypasser<br>
 Development: Google Cookies Attempt, Google Privacy Terms
