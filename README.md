@@ -1,4 +1,4 @@
-# WASS 0.1 BETA INIT
+# W.A.S.S 0.1 BETA INIT
 (WASS) Web Automatic Search Scanner. PHP software for performs a web search on multiple search-engines, filtering the results for best accuracy.<br>
 Engines Available: GOOGLE IT, GOOGLE COM, GOOGLE RANDOM, BING<br>
 Future Engines: ASK, YAHOO, DUCKDUCKGO, QWANT, ECOSIA, OSCOBO, BAIDU,YANDEX<br>
