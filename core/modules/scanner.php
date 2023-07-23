@@ -43,7 +43,7 @@ class Scanner
     protected function scan_dork()
     {
         foreach($this->dorks as $dork){
-            print("\n\n===[ INFO ][ DORK ]:: $dork\n");
+            print("\n\n===[ INFO ][ SEARCH ]:: $dork\n");
             self::$dork = $dork;
             $this->scan_engine();
         }
