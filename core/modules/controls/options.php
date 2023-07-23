@@ -16,7 +16,7 @@ class Options
     private static $mode = "SFC";
     public static array $return_options;
     public static array $options = array(
-        'help::','mode:','set-search:','set-engine:','set-finder:','set-crawler:','filter-dork:'
+        'help::','mode:','set-search:','set-engine:','set-finder:','filter-dork:'
     );
 
     public function ctrl_options(){
@@ -64,12 +64,6 @@ class Options
             case ($opt == "set-finder" || $opt == "sf"):
                 self::$finder = explode("\n", file_get_contents(__DIR__."/".$o));
                 break;
-            case ($opt == "set-crawler" || $opt == "s"):
-                $crawl_a = array_unique(array_filter(explode(",", file_get_contents($o))));
-                $crawl_b = array_unique(array_filter(explode("\n", file_get_contents($o))));
-                $crawler = (strstr("\n",$o)) ? $crawl_b:$crawl_a;
-                self::$crawler = $crawler;
-                break;
             case ($opt == "filter-dork" || $opt == "fd"):
                 self::$filter_dork = $o;
                 break;
@@ -107,14 +101,6 @@ class Options
                     exit(0);
                 }
                 break;
-            case ($in == "C"): // Crawler
-                if(isset(self::$return_options["set-crawler"])){
-                    Options::mode_c();
-                }else{
-                    print("\n[!!!] THIS MODE NEED --set-crawler <file.txt> OPTION [!!!]");
-                    exit(0);
-                }
-                break;
             default: // case SFC ALL
                 print("\n[-] OPTION CONTENT NOT VALID: S/SF/SFC/FC/C [-]").exit(0);
                 
@@ -144,8 +130,6 @@ class Options
         $find = new Modules\Finder(Modules\Scanner::$scan_result);
         $find -> find();
         sleep(0.1);
-        $crawl = new Modules\Crawler(Modules\Finder::$find_result['tot']);
-        $crawl -> crawl();
         exit(0);
     }
     public static function mode_fc()
@@ -157,12 +141,7 @@ class Options
         $crawl -> crawl();
         exit(0);
     }
-    public static function mode_c()
-    {
-        $crawl = new Modules\Crawler(self::$crawler);
-        $crawl -> crawl();
-        exit(0);
-    }
+
 
 
 
