@@ -30,7 +30,7 @@ class Core
                                     'Bypasser' => '/modules/bypasser.php');
     private function loader(){
         sleep(1);
-        print("\n===[: Loading Web Vulnerability Scanner :]\n");
+        print("\n===[: Loading Modules :]\n");
         foreach(self::$structures as $struct => $s){
             $file = __DIR__.$s;
             if(file_exists($file)){
@@ -38,7 +38,7 @@ class Core
                 //sleep(1);
                 print(".");
             }else{
-                print("ERRORE: ".$file);
+                print("ERRORE MODULO: ".$file);
             }
         }
         system('clear');
@@ -61,18 +61,11 @@ class Core
 
     public function main(){
         print("\n\n
-                   ☐☐☐☐
-             _____☐  C☐___________
-       \/   /☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐\   
-       ☐<☐☐☐CALYPSO SCANNER 0.1☐☐☐[  # #  >===> 
-       /\   \☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐☐/   
-            
-
        
-            WEB DORKS VULNERABILITY SCANNER
+         WASS - Web Automatic Search Scanner
         ######################################
-        ## - Version: 0.1 beta              ##
-        ## - Author: DreamX                 ##
+        ## - Version: 0.1 BETA              ##
+        ## - Author: FishX                  ##
         ## - Github: FishDevLab             ##
         ######################################
                <<< --help, --update >>>
