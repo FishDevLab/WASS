@@ -113,7 +113,7 @@ class Bypasser
         }else{
             print(".");
             self::$r += 1;
-            Bypasser::google_unusual_traffic(); //Recursive call to repeat bypass
+            Bypasser::google_unusual_traffic(); //chiamata ricorsiva alla """unibo"""
         }
     }
 
